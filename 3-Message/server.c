@@ -35,6 +35,12 @@ int main(int argc, char **argv)
     return 0;
 }
 
+void DieWithError(char *errorMessage)
+{
+    perror(errorMessage);
+    exit(1);
+}
+
 int prepare_server_socket(int port)
 {
     int servSock = socket(PF_INET, SOCK_STREAM, 0);
